@@ -97,6 +97,11 @@ if filter_tests!(testsuite, args)
     if Sys.total_memory() < 12 * 2^30
         delete!(testsuite, "largecopy")
     end
+
+    # only run large broadcast test on machines with >12GiB memory
+    if Sys.total_memory() < 12 * 2^30
+        delete!(testsuite, "largebroadcast")
+    end
 end
 
 # workers to run tests on
