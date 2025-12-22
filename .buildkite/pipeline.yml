@@ -127,6 +127,9 @@ steps:
               dirs:
                 - src
                 - lib
+        env:
+          MTL_DEBUG_LAYER: '1'
+          MTL_SHADER_VALIDATION: '1'
         agents:
           queue: "juliaecosystem"
           os: "macos"
